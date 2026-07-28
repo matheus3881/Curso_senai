@@ -1,4 +1,7 @@
 
+from POO.tfu_poo.exceptions.erros import PrecoInvalidoError
+
+
 class Produto:
     def __init__(self, id: int, nome: str, preco: float, estoque: int, descricao: str):
         self.id = id
@@ -18,7 +21,7 @@ class Produto:
     @preco.setter
     def preco(self, valor):
         if valor < 0:
-            raise ValueError("Preço não pode ser negativo")
+            raise PrecoInvalidoError("Preço não pode ser negativo")
         self._preco = valor
         
 

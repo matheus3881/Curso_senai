@@ -8,13 +8,3 @@ class Usuario(ABC):
     @abstractmethod
     def __str__(self):
         return f"Nome: {self.nome} - E-mail: {self.email}"
-
-
-
-
-
-
-    
-
-
-

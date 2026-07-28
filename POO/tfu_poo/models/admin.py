@@ -1,4 +1,4 @@
-from usuario import Usuario
+from POO.tfu_poo.models.usuario import Usuario
 
 class Admin(Usuario):
     def __str__(self):
