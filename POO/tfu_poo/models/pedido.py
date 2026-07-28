@@ -1,6 +1,6 @@
-from POO.tfu_poo.exceptions.erros import EstoqueInsuficienteError
-from POO.tfu_poo.models.produto import Produto
-from POO.tfu_poo.models.cliente import Cliente
+from exceptions.erros import EstoqueInsuficienteError
+from models.produto import Produto
+from models.cliente import Cliente
 
 
 class ItemPedido:
@@ -21,7 +21,7 @@ class Pedido:
         self.itens = []
         self.cliente = cliente
 
-    def adicionar_item(self, produto, quantidade):
+    def adicionar_item(self, produto: Produto, quantidade: int):
         if produto.estoque >= quantidade:
             item = ItemPedido(produto, quantidade)
             self.itens.append(item)
@@ -43,5 +43,5 @@ class Pedido:
     
     def mudar_status(self, novo_status):
         self.status = novo_status
-        print(f"Status do pedido #{self.id} alteradi para: {novo_status}")
+        return f"Status do pedido #{self.id} alterado para: {novo_status}"
         

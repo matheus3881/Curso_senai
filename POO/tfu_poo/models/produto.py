@@ -1,5 +1,5 @@
 
-from POO.tfu_poo.exceptions.erros import PrecoInvalidoError
+from exceptions.erros import PrecoInvalidoError
 
 
 class Produto:
@@ -29,19 +29,3 @@ class Produto:
     def __str__(self):
         """Mostrar informações do produto"""
         return f"produto: {self.nome} - Valor: R$ {self._preco} - Quantidade em estoque: {self.estoque} - Descrição do produto: {self.descricao}"
-
-
-p1 = Produto(1, "iphone", 3400.90, 15, "Celular da maçã")
-
-print(p1)
-
-p1.atualizar_estoque(nova_quantidade=12)
-
-print(p1)
-
-print(p1.preco)
-
-p1.preco = 300
-
-print(p1.preco)
-
