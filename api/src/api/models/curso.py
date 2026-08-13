@@ -1,11 +1,9 @@
-from pydantic import BaseModel, Field
+from sqlalchemy.orm import Mapped, mapped_column
+from databases import Base
 
-class CursoEntrada(BaseModel):
-    nome: str = Field(min_length=3)
-    carga_hoaria: int = Field(gt=0)
+class Curso(Base):
+    __tablename__ = "cursos"
 
-
-class CursoReposta(BaseModel):
-    id: int
-    nome: str
-    carga_horaria: int
+    id: Mapped[int] = mapped_column(primaty_key=True)
+    nome: Mapped[str]
+    carga_horaria: Mapped[int]

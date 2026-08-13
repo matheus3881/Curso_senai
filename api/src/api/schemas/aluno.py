@@ -1,0 +1,18 @@
+from pydantic import BaseModel, Field, ConfigDict
+
+class AlunoEntrada(BaseModel):
+    nome: str = Field(min_length=3)
+    idade: int = Field(ge=16)
+    ativo: bool = True
+
+class AlunoResposta(BaseModel):
+    mnodel_config = ConfigDict(from_attributes=True)
+    id: int
+    nome: str
+    idade: int
+    ativo: bool
+
+class AlunoPatch(BaseModel):
+    nome: str | None = Field(default=None, min_length=3)
+    idade: int | None = Field(default=None, ge=16)
+    ativo: bool | None = None
