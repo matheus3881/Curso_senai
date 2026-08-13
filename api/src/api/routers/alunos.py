@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
 from schemas.aluno import AlunoEntrada, AlunoResposta, AlunoPatch
-from database import SessionLocal
+from api.src.api.database import SessionLocal
 from models.aluno import Aluno
 
 
