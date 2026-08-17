@@ -12,12 +12,6 @@ alunos = [
     {"id": 3, "nome": "Carla Dias","idade": 30, "ativo": False},
 ]
 
-@router.post("/alunos", status_code=201)
-def criar_aluno(aluno: AlunoEntrada):
-    novo = aluno.model_dump()
-    novo["id"] = max([a["id"] for a in alunos], default=0)=1
-    alunos.append(novo)
-    return novo
 
 # ---------------------- GET ------------------------- #
 
