@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from schemas.aluno import AlunoEntrada, AlunoResposta, AlunoPatch
+from aluno import AlunoEntrada, AlunoResposta, AlunoPatch
 from api.src.api.database import SessionLocal
 from models.aluno import Aluno
 
